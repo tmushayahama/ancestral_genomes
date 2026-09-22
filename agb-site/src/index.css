@@ -25,4 +25,15 @@
 
   --font-sans:
     Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* Carried over from the Angular app's `agb.common.scss` so the React site is
+     visually continuous with the old one. */
+  --color-agb-toolbar: #e7ecf4;
+  --color-agb-border: #bbbbbb;
+  --color-agb-divider: #dddddd;
+  --color-agb-card-border: #cccccc;
+  --color-agb-muted: #999999;
+  /* Selected species row — the old site's `.background-highlight`. */
+  --color-agb-highlight: #d2f244;
+  --color-agb-legend-bg: rgba(221, 221, 221, 0.85);
 }

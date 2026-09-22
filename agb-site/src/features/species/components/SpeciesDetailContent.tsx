@@ -65,21 +65,29 @@ const SpeciesDetailContent: React.FC<SpeciesDetailContentProps> = ({ species }) 
           hasContent={Boolean(detail.all_ancestors?.length)}
           emptyMessage="No ancestral genomes recorded."
         >
-          <ul className="flex flex-col gap-1">
+          {/* Three aligned columns rather than a run-on line: the list can be
+              twenty-odd rows deep for a vertebrate. */}
+          <ul className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-baseline gap-x-4 gap-y-1">
             {detail.all_ancestors?.map(([mya, ancestor]) => (
-              <li key={ancestor} className="flex flex-wrap items-baseline gap-2 text-sm">
-                <Anchor component={Link} to={`/species/${encodeURIComponent(ancestor)}`} fz="sm">
+              <li key={ancestor} className="contents">
+                <Anchor
+                  component={Link}
+                  to={`/species/${encodeURIComponent(ancestor)}`}
+                  fz="sm"
+                  className="truncate"
+                >
                   {ancestor}
                 </Anchor>
-                <Text span c="dimmed" fz="xs">
-                  ({mya} mya)
+                <Text span c="dimmed" fz="xs" className="whitespace-nowrap tabular-nums">
+                  {mya} mya
                 </Text>
                 <Anchor
                   component={Link}
                   to={`/genes/genome-comparison/${encodeURIComponent(
                     detail.long_name
                   )}/${encodeURIComponent(ancestor)}`}
-                  fz="sm"
+                  fz="xs"
+                  className="whitespace-nowrap"
                 >
                   compare with {detail.long_name}
                 </Anchor>

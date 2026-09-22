@@ -30,12 +30,20 @@ const GAINED = 'gained'
 const UNMODELED = 'unmodeled'
 
 /**
- * Section counts are only known once that section's query resolves, and an
- * uncached comparison takes several seconds. Showing "0" in the meantime reads
- * as a real answer, so show an ellipsis until the data is in.
+ * A section's count is unknown until it has been expanded and its query has
+ * resolved, and an uncached comparison takes several seconds. Showing "0"
+ * would read as a real answer, so render nothing before the request and an
+ * ellipsis while it is in flight.
  */
-const count = (value: number | undefined, loading = false) =>
-  loading || value === undefined ? '…' : value.toLocaleString('en-US')
+const Count: React.FC<{ value?: number; loading?: boolean; requested?: boolean }> = ({
+  value,
+  loading = false,
+  requested = true,
+}) => {
+  if (!requested) return null
+  if (loading || value === undefined) return <span aria-label="loading">…</span>
+  return <strong>{value.toLocaleString('en-US')}</strong>
+}
 
 /**
  * Compares an extant genome with one of its ancestral genomes. Each of the four
@@ -103,11 +111,11 @@ const GenomeComparisonPage: React.FC = () => {
       <Accordion multiple value={opened} onChange={handleChange} variant="separated">
         <ComparisonSection
           value={INHERITED}
-          accentClassName="border-l-green-500"
+          accentColor="#16a34a"
           title={
             <>
-              <strong>{count(descendantCount, inherited.isLoading)}</strong> genes inherited from{' '}
-              <strong>{count(inherited.data?.length, inherited.isLoading)}</strong> ancestral genes
+              <Count value={descendantCount} loading={inherited.isLoading} /> genes inherited from{' '}
+              <Count value={inherited.data?.length} loading={inherited.isLoading} /> ancestral genes
             </>
           }
         >
@@ -129,10 +137,15 @@ const GenomeComparisonPage: React.FC = () => {
 
         <ComparisonSection
           value={LOST}
-          accentClassName="border-l-red-500"
+          accentColor="#dc2626"
           title={
             <>
-              Ancestral genes lost <strong>{count(lost.data?.length, lost.isLoading)}</strong>
+              Ancestral genes lost{' '}
+              <Count
+                value={lost.data?.length}
+                loading={lost.isLoading}
+                requested={loaded.has(LOST)}
+              />
             </>
           }
         >
@@ -154,11 +167,15 @@ const GenomeComparisonPage: React.FC = () => {
 
         <ComparisonSection
           value={GAINED}
-          accentClassName="border-l-blue-500"
+          accentColor="#2563eb"
           title={
             <>
               Genes gained other than by duplication{' '}
-              <strong>{count(gained.data?.length, gained.isLoading)}</strong>
+              <Count
+                value={gained.data?.length}
+                loading={gained.isLoading}
+                requested={loaded.has(GAINED)}
+              />
             </>
           }
         >
@@ -180,11 +197,15 @@ const GenomeComparisonPage: React.FC = () => {
 
         <ComparisonSection
           value={UNMODELED}
-          accentClassName="border-l-gray-400"
+          accentColor="#9ca3af"
           title={
             <>
               Genes with no ancestral reconstruction{' '}
-              <strong>{count(unmodeled.data?.length, unmodeled.isLoading)}</strong>
+              <Count
+                value={unmodeled.data?.length}
+                loading={unmodeled.isLoading}
+                requested={loaded.has(UNMODELED)}
+              />
             </>
           }
         >

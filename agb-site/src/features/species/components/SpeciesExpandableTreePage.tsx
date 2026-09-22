@@ -27,8 +27,8 @@ const SpeciesExpandableTreePage: React.FC = () => {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex shrink-0 items-center gap-3 border-b border-gray-200 bg-white px-4 py-2">
-        <Text fw={600} size="sm">
+      <div className="border-agb-border bg-agb-toolbar flex h-10 shrink-0 items-center gap-3 border-b px-[5px]">
+        <Text fw={600} size="sm" className="pl-1">
           Expandable species tree
         </Text>
         <Text size="xs" c="dimmed">
@@ -49,7 +49,7 @@ const SpeciesExpandableTreePage: React.FC = () => {
         </Menu>
       </div>
 
-      <div className="min-h-0 grow bg-white">
+      <div className="relative min-h-0 grow bg-white">
         {isLoading ? (
           <div className="flex h-full items-center justify-center">
             <Loader color="accent" />
@@ -61,9 +61,8 @@ const SpeciesExpandableTreePage: React.FC = () => {
         ) : (
           <SpeciesExpandableTree nodes={nodes} onShowInfo={handleShowInfo} />
         )}
+        <TimescaleLegend icon="dot" />
       </div>
-
-      <TimescaleLegend />
     </div>
   )
 }

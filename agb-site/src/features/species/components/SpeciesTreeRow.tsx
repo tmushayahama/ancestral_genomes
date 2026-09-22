@@ -4,6 +4,7 @@ import { ActionIcon, Tooltip } from '@mantine/core'
 import { MdChevronRight, MdExpandMore, MdHistory, MdMoreHoriz } from 'react-icons/md'
 import type { SpeciesNode } from '../models/species'
 
+/** Matches the Angular tree's `matTreeNodePaddingIndent="10"`. */
 const INDENT_PX = 10
 
 interface SpeciesTreeRowProps {
@@ -16,9 +17,9 @@ interface SpeciesTreeRowProps {
 }
 
 /**
- * One tree row, rendered recursively. A flat + virtualised list would be
- * faster, but the tree is ~250 nodes and ships fully expanded, so recursion
- * keeps the markup honest about the hierarchy for screen readers.
+ * One tree row, rendered recursively. Row metrics come from the old site:
+ * 25px tall, 12px label, 10px muted gene count, and the yellow-green selection
+ * highlight.
  */
 const SpeciesTreeRow: React.FC<SpeciesTreeRowProps> = ({
   node,
@@ -53,29 +54,36 @@ const SpeciesTreeRow: React.FC<SpeciesTreeRowProps> = ({
             onSelect(node.short_name)
           }
         }}
-        className={`flex cursor-pointer items-center gap-1 py-0.5 pr-1 text-xs ${
-          isActive ? 'bg-accent-100 font-medium' : 'hover:bg-gray-100'
+        className={`flex h-[25px] cursor-pointer items-center gap-0.5 pr-[5px] text-xs text-black transition-colors ${
+          isActive ? 'bg-agb-highlight font-medium' : 'hover:bg-black/10'
         }`}
-        style={{ paddingLeft: node.level * INDENT_PX + 4 }}
+        style={{ paddingLeft: node.level * INDENT_PX }}
       >
         {hasChildren ? (
           <ActionIcon
-            size="xs"
+            size={25}
+            radius="sm"
             onClick={event => {
               event.stopPropagation()
               onToggle(node.id)
             }}
             aria-label={`${isCollapsed ? 'Expand' : 'Collapse'} ${node.long_name}`}
           >
-            {isCollapsed ? <MdChevronRight /> : <MdExpandMore />}
+            {isCollapsed ? <MdChevronRight size={16} /> : <MdExpandMore size={16} />}
           </ActionIcon>
         ) : (
-          <span className="inline-block w-[22px]" aria-hidden />
+          <span className="inline-block w-[25px] shrink-0" aria-hidden />
         )}
 
-        <Tooltip label={`${node.timescale} mya`} disabled={!node.timescale}>
-          <span style={{ color: node.timescaleBucket.color }} className="flex items-center">
-            <MdHistory aria-hidden />
+        <Tooltip
+          label={node.timescale ? `${node.timescale} mya` : 'Extant species'}
+          openDelay={400}
+        >
+          <span
+            className="flex w-[25px] shrink-0 items-center justify-center"
+            style={{ color: node.timescaleBucket.color }}
+          >
+            <MdHistory size={18} aria-hidden />
           </span>
         </Tooltip>
 
@@ -83,24 +91,26 @@ const SpeciesTreeRow: React.FC<SpeciesTreeRowProps> = ({
           {node.long_name}
         </span>
 
-        <span className="w-14 shrink-0 text-right text-gray-600 tabular-nums">
-          {node.gene_count?.toLocaleString('en-US')}
+        <span className="text-agb-muted w-10 shrink-0 text-right text-[10px] tabular-nums">
+          {node.gene_count ? node.gene_count.toLocaleString('en-US') : ''}
         </span>
 
         <ActionIcon
-          size="xs"
+          size={20}
+          radius="sm"
+          className="shrink-0"
           onClick={event => {
             event.stopPropagation()
             onShowInfo(node.short_name)
           }}
           aria-label={`Information about ${node.long_name}`}
         >
-          <MdMoreHoriz />
+          <MdMoreHoriz size={16} />
         </ActionIcon>
       </div>
 
       {hasChildren && !isCollapsed && (
-        <ul role="group" className="list-none">
+        <ul role="group">
           {node.children.map(child => (
             <SpeciesTreeRow
               key={child.id}

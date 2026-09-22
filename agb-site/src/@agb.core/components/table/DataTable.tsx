@@ -108,7 +108,7 @@ export function DataTable<T>({
       <Group
         gap="xs"
         wrap="nowrap"
-        className="shrink-0 border-b border-gray-200 bg-white px-3 py-2"
+        className="border-agb-border bg-agb-toolbar min-h-10 shrink-0 border-b px-[5px] py-1"
       >
         {toolbarStart}
         <TextInput
@@ -163,7 +163,7 @@ export function DataTable<T>({
                       <Table.Th
                         key={header.id}
                         style={{ width: header.column.columnDef.size }}
-                        className="bg-primary-50 whitespace-nowrap"
+                        className="border-agb-border h-10 border-b bg-white text-xs font-medium whitespace-nowrap text-black/54"
                       >
                         {header.isPlaceholder ? null : sortable ? (
                           <button
@@ -213,7 +213,7 @@ export function DataTable<T>({
           justify="space-between"
           gap="xs"
           wrap="nowrap"
-          className="shrink-0 border-t border-gray-200 bg-white px-3 py-1.5"
+          className="border-agb-border shrink-0 border-t bg-white px-[5px] py-1"
         >
           <Text size="xs" c="dimmed">
             {filteredRows.length.toLocaleString('en-US')}

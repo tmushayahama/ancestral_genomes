@@ -6,7 +6,7 @@ interface ComparisonSectionProps {
   /** Header text, already formatted with its counts. */
   title: React.ReactNode
   /** Left colour bar, so the four sections stay distinguishable when scrolled. */
-  accentClassName: string
+  accentColor: string
   children: React.ReactNode
 }
 
@@ -18,10 +18,12 @@ interface ComparisonSectionProps {
 const ComparisonSection: React.FC<ComparisonSectionProps> = ({
   value,
   title,
-  accentClassName,
+  accentColor,
   children,
 }) => (
-  <Accordion.Item value={value} className={`border-l-4 ${accentClassName}`}>
+  // Inline, not a utility class: Mantine's `separated` variant sets its own
+  // border on the item and would otherwise win.
+  <Accordion.Item value={value} style={{ borderLeft: `4px solid ${accentColor}` }}>
     <Accordion.Control>
       <Text fw={500} size="sm">
         {title}

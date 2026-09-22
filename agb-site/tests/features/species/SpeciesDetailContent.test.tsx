@@ -58,7 +58,7 @@ describe('SpeciesDetailContent', () => {
       '/genes/genome-comparison/Homo-Pan/Eukaryota',
       '/genes/genome-comparison/Homo-Pan/LUCA',
     ])
-    expect(screen.getByText('(1105 mya)')).toBeInTheDocument()
+    expect(screen.getByText('1105 mya')).toBeInTheDocument()
   })
 
   it('omits the ancestral genomes card for an ancestral species', async () => {

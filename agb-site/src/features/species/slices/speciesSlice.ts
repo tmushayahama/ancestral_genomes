@@ -40,11 +40,20 @@ export const speciesSlice = createSlice({
     expandAllSpecies: state => {
       state.collapsedIds = []
     },
+    /** Takes the ids of every branch node, since the slice has no tree. */
+    collapseAllSpecies: (state, action: PayloadAction<string[]>) => {
+      state.collapsedIds = action.payload
+    },
   },
 })
 
-export const { setActiveSpecies, setSpeciesTreeView, toggleSpeciesNode, expandAllSpecies } =
-  speciesSlice.actions
+export const {
+  setActiveSpecies,
+  setSpeciesTreeView,
+  toggleSpeciesNode,
+  expandAllSpecies,
+  collapseAllSpecies,
+} = speciesSlice.actions
 
 export const selectActiveSpecies = (state: { species: SpeciesUiState }) =>
   state.species.activeSpecies

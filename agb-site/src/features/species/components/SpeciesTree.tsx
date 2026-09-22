@@ -1,11 +1,16 @@
 import type React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ActionIcon, Button, Loader, Menu, Text, Tooltip } from '@mantine/core'
-import { MdHelpOutline } from 'react-icons/md'
+import { MdHelpOutline, MdUnfoldLess, MdUnfoldMore } from 'react-icons/md'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { DialogComponent, openDialog } from '@/@agb.core/components/dialog/dialogSlice'
 import { useGetSpeciesTreeQuery } from '../slices/speciesApiSlice'
-import { selectCollapsedIds, toggleSpeciesNode } from '../slices/speciesSlice'
+import {
+  collapseAllSpecies,
+  expandAllSpecies,
+  selectCollapsedIds,
+  toggleSpeciesNode,
+} from '../slices/speciesSlice'
 import SpeciesTreeRow from './SpeciesTreeRow'
 import TimescaleLegend from './TimescaleLegend'
 
@@ -36,10 +41,23 @@ const SpeciesTree: React.FC<SpeciesTreeProps> = ({ activeSpecies }) => {
       })
     )
 
+  const allBranchIds = () => {
+    const ids: string[] = []
+    const walk = (nodes: typeof tree) =>
+      nodes.forEach(node => {
+        if (node.children.length) {
+          ids.push(node.id)
+          walk(node.children)
+        }
+      })
+    walk(tree)
+    return ids
+  }
+
   return (
-    <div className="flex h-full min-h-0 flex-col border-r border-gray-200 bg-white">
-      <div className="flex shrink-0 items-center gap-1 border-b border-gray-200 px-3 py-2">
-        <Text fw={600} size="sm">
+    <div className="border-agb-divider relative flex h-full min-h-0 flex-col border-r bg-white">
+      <div className="border-agb-border bg-agb-toolbar flex h-10 shrink-0 items-center gap-1 border-b px-[5px]">
+        <Text fw={600} size="sm" className="pl-1">
           Nested View
         </Text>
         <Tooltip label={HELP_TEXT} w={340}>
@@ -48,6 +66,19 @@ const SpeciesTree: React.FC<SpeciesTreeProps> = ({ activeSpecies }) => {
           </ActionIcon>
         </Tooltip>
         <span className="grow" />
+        <Tooltip label={collapsedIds.length ? 'Expand all' : 'Collapse all'}>
+          <ActionIcon
+            size="sm"
+            onClick={() =>
+              dispatch(
+                collapsedIds.length ? expandAllSpecies() : collapseAllSpecies(allBranchIds())
+              )
+            }
+            aria-label={collapsedIds.length ? 'Expand all' : 'Collapse all'}
+          >
+            {collapsedIds.length ? <MdUnfoldMore /> : <MdUnfoldLess />}
+          </ActionIcon>
+        </Tooltip>
         <Menu position="bottom-end">
           <Menu.Target>
             <Button variant="subtle">Change view</Button>
@@ -61,13 +92,13 @@ const SpeciesTree: React.FC<SpeciesTreeProps> = ({ activeSpecies }) => {
         </Menu>
       </div>
 
-      <div className="text-2xs flex shrink-0 items-center gap-1 border-b border-gray-200 bg-gray-50 px-3 py-1 text-[11px] font-medium text-gray-600">
-        <span className="grow">Species</span>
-        <span className="w-14 text-right">Genes</span>
-        <span className="w-[22px] text-right">Info</span>
+      <div className="border-agb-border flex h-10 shrink-0 items-center border-b bg-white px-[5px] text-xs font-medium text-black/54 shadow-sm">
+        <span className="grow pl-1">Species</span>
+        <span className="w-10 text-right">Genes</span>
+        <span className="w-[30px] text-right">Info</span>
       </div>
 
-      <div className="min-h-0 grow overflow-auto">
+      <div className="min-h-0 grow overflow-auto p-[5px] pb-[200px]">
         {isLoading ? (
           <div className="flex h-full items-center justify-center py-10">
             <Loader color="accent" size="sm" />
@@ -77,7 +108,7 @@ const SpeciesTree: React.FC<SpeciesTreeProps> = ({ activeSpecies }) => {
             Could not load the species tree.
           </Text>
         ) : (
-          <ul role="tree" aria-label="Species" className="list-none">
+          <ul role="tree" aria-label="Species">
             {tree.map(node => (
               <SpeciesTreeRow
                 key={node.id}

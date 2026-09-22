@@ -29,17 +29,17 @@ const InfoCard: React.FC<InfoCardProps> = ({
   const showContent = hasContent ?? Boolean(children)
 
   return (
-    <Paper withBorder shadow="xs" radius="sm" className="mb-3 overflow-hidden">
-      <div className="bg-primary-50 flex items-center justify-between gap-2 px-3 py-2">
-        <Text fw={500} size="sm">
+    <Paper withBorder shadow="xs" radius="sm" className="mb-5 overflow-hidden bg-white">
+      <div className="border-agb-card-border flex min-h-10 items-center justify-between gap-2 border-b p-2.5">
+        <Text fw={700} size="sm">
           {title}
         </Text>
         {action}
       </div>
       {showContent ? (
-        <div className={noPadding ? '' : 'px-3 py-2'}>{children}</div>
+        <div className={noPadding ? '' : 'p-2.5'}>{children}</div>
       ) : (
-        <Text c="dimmed" fs="italic" size="sm" className="px-3 py-2">
+        <Text c="dimmed" fs="italic" size="xs" className="p-2.5">
           {emptyMessage}
         </Text>
       )}
