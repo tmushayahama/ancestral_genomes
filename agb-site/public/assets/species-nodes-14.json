@@ -1,0 +1,1811 @@
+{
+    "children": [
+        {
+            "name": "Archaea-Eukaryota",
+            "short_name": "Archaea-Eukaryota",
+            "taxon_id": "",
+            "time_scale": "4290",
+            "color": "red",
+            "children": [
+                {
+                    "name": "Eukaryota",
+                    "short_name": "Eukaryota",
+                    "taxon_id": "2759",
+                    "time_scale": "2101",
+                    "color": "red",
+                    "children": [
+                        {
+                            "name": "Unikonts",
+                            "short_name": "Unikonts",
+                            "taxon_id": "",
+                            "time_scale": "1480",
+                            "color": "purple",
+                            "children": [
+                                {
+                                    "name": "Opisthokonts",
+                                    "short_name": "Opisthokonts",
+                                    "taxon_id": "33154",
+                                    "time_scale": "1105",
+                                    "color": "purple",
+                                    "children": [
+                                        {
+                                            "name": "Metazoa-Choanoflagellida",
+                                            "short_name": "Metazoa-Choanoflagellida",
+                                            "taxon_id": "",
+                                            "time_scale": "1023",
+                                            "color": "purple",
+                                            "children": [
+                                                {
+                                                    "name": "Eumetazoa",
+                                                    "short_name": "Eumetazoa",
+                                                    "taxon_id": "6072",
+                                                    "time_scale": "948",
+                                                    "color": "orange",
+                                                    "children": [
+                                                        {
+                                                            "name": "Bilateria",
+                                                            "short_name": "Bilateria",
+                                                            "taxon_id": "33213",
+                                                            "time_scale": "824",
+                                                            "color": "orange",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Deuterostomia",
+                                                                    "short_name": "Deuterostomia",
+                                                                    "taxon_id": "33511",
+                                                                    "time_scale": "684",
+                                                                    "color": "orange",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Chordata",
+                                                                            "short_name": "Chordata",
+                                                                            "taxon_id": "7711",
+                                                                            "time_scale": "684",
+                                                                            "color": "orange",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Craniata-Cephalochordata",
+                                                                                    "short_name": "Craniata-Cephalochordata",
+                                                                                    "taxon_id": "",
+                                                                                    "time_scale": "684",
+                                                                                    "color": "orange",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Euteleostomi",
+                                                                                            "short_name": "Euteleostomi",
+                                                                                            "taxon_id": "117571",
+                                                                                            "time_scale": "435",
+                                                                                            "color": "green",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Tetrapoda",
+                                                                                                    "short_name": "Tetrapoda",
+                                                                                                    "taxon_id": "32523",
+                                                                                                    "time_scale": "352",
+                                                                                                    "color": "green",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Amniota",
+                                                                                                            "short_name": "Amniota",
+                                                                                                            "taxon_id": "32524",
+                                                                                                            "time_scale": "312",
+                                                                                                            "color": "green",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "name": "Mammalia",
+                                                                                                                    "short_name": "Mammalia",
+                                                                                                                    "taxon_id": "40674",
+                                                                                                                    "time_scale": "177",
+                                                                                                                    "color": "cyan",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "name": "Theria",
+                                                                                                                            "short_name": "Theria",
+                                                                                                                            "taxon_id": "",
+                                                                                                                            "time_scale": "159",
+                                                                                                                            "color": "cyan",
+                                                                                                                            "children": [
+                                                                                                                                {
+                                                                                                                                    "name": "Eutheria",
+                                                                                                                                    "short_name": "Eutheria",
+                                                                                                                                    "taxon_id": "9347",
+                                                                                                                                    "time_scale": "105",
+                                                                                                                                    "color": "cyan",
+                                                                                                                                    "children": [
+                                                                                                                                        {
+                                                                                                                                            "name": "Euarchontoglires",
+                                                                                                                                            "short_name": "Euarchontoglires",
+                                                                                                                                            "taxon_id": "314146",
+                                                                                                                                            "time_scale": "90",
+                                                                                                                                            "color": "cyan",
+                                                                                                                                            "children": [
+                                                                                                                                                {
+                                                                                                                                                    "name": "Catarrhini",
+                                                                                                                                                    "short_name": "Catarrhini",
+                                                                                                                                                    "taxon_id": "9526",
+                                                                                                                                                    "time_scale": "29",
+                                                                                                                                                    "color": "blue",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Homininae",
+                                                                                                                                                            "short_name": "Homininae",
+                                                                                                                                                            "taxon_id": "207598",
+                                                                                                                                                            "time_scale": "9",
+                                                                                                                                                            "color": "blue",
+                                                                                                                                                            "children": [
+                                                                                                                                                                {
+                                                                                                                                                                    "name": "Homo-Pan",
+                                                                                                                                                                    "short_name": "Homo-Pan",
+                                                                                                                                                                    "taxon_id": "",
+                                                                                                                                                                    "time_scale": "6.65",
+                                                                                                                                                                    "color": "blue",
+                                                                                                                                                                    "children": [
+                                                                                                                                                                        {
+                                                                                                                                                                            "name": "Homo sapiens",
+                                                                                                                                                                            "short_name": "HUMAN",
+                                                                                                                                                                            "taxon_id": "9606",
+                                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                                            "color": "black"
+                                                                                                                                                                        },
+                                                                                                                                                                        {
+                                                                                                                                                                            "name": "Pan troglodytes",
+                                                                                                                                                                            "short_name": "PANTR",
+                                                                                                                                                                            "taxon_id": "9598",
+                                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                                            "color": "black"
+                                                                                                                                                                        }
+                                                                                                                                                                    ]
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                    "name": "Gorilla gorilla gorilla",
+                                                                                                                                                                    "short_name": "GORGO",
+                                                                                                                                                                    "taxon_id": "9595",
+                                                                                                                                                                    "time_scale": "0",
+                                                                                                                                                                    "color": "black"
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Macaca mulatta",
+                                                                                                                                                            "short_name": "MACMU",
+                                                                                                                                                            "taxon_id": "9544",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "name": "Murinae",
+                                                                                                                                                    "short_name": "Murinae",
+                                                                                                                                                    "taxon_id": "39107",
+                                                                                                                                                    "time_scale": "22",
+                                                                                                                                                    "color": "blue",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Mus musculus",
+                                                                                                                                                            "short_name": "MOUSE",
+                                                                                                                                                            "taxon_id": "10090",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Rattus norvegicus",
+                                                                                                                                                            "short_name": "RAT",
+                                                                                                                                                            "taxon_id": "10116",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "name": "Laurasiatheria",
+                                                                                                                                            "short_name": "Laurasiatheria",
+                                                                                                                                            "taxon_id": "314145",
+                                                                                                                                            "time_scale": "89",
+                                                                                                                                            "color": "cyan",
+                                                                                                                                            "children": [
+                                                                                                                                                {
+                                                                                                                                                    "name": "Perissodactyla",
+                                                                                                                                                    "short_name": "Perissodactyla",
+                                                                                                                                                    "taxon_id": "9787",
+                                                                                                                                                    "time_scale": "78",
+                                                                                                                                                    "color": "cyan",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Artiodactyla",
+                                                                                                                                                            "short_name": "Artiodactyla",
+                                                                                                                                                            "taxon_id": "",
+                                                                                                                                                            "time_scale": "62",
+                                                                                                                                                            "color": "cyan",
+                                                                                                                                                            "children": [
+                                                                                                                                                                {
+                                                                                                                                                                    "name": "Bos taurus",
+                                                                                                                                                                    "short_name": "BOVIN",
+                                                                                                                                                                    "taxon_id": "9913",
+                                                                                                                                                                    "time_scale": "0",
+                                                                                                                                                                    "color": "black"
+                                                                                                                                                                },
+                                                                                                                                                                {
+                                                                                                                                                                    "name": "Sus scrofa",
+                                                                                                                                                                    "short_name": "PIG",
+                                                                                                                                                                    "taxon_id": "9823",
+                                                                                                                                                                    "time_scale": "0",
+                                                                                                                                                                    "color": "black"
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Equus caballus",
+                                                                                                                                                            "short_name": "HORSE",
+                                                                                                                                                            "taxon_id": "9796",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "name": "Carnivora",
+                                                                                                                                                    "short_name": "Carnivora",
+                                                                                                                                                    "taxon_id": "33554",
+                                                                                                                                                    "time_scale": "54",
+                                                                                                                                                    "color": "cyan",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Felis catus",
+                                                                                                                                                            "short_name": "FELCA",
+                                                                                                                                                            "taxon_id": "9685",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "name": "Canis lupus familiaris",
+                                                                                                                                                            "short_name": "CANLF",
+                                                                                                                                                            "taxon_id": "9615",
+                                                                                                                                                            "time_scale": "0",
+                                                                                                                                                            "color": "black"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "name": "Monodelphis domestica",
+                                                                                                                                    "short_name": "MONDO",
+                                                                                                                                    "taxon_id": "13616",
+                                                                                                                                    "time_scale": "0",
+                                                                                                                                    "color": "black"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "name": "Ornithorhynchus anatinus",
+                                                                                                                            "short_name": "ORNAN",
+                                                                                                                            "taxon_id": "9258",
+                                                                                                                            "time_scale": "0",
+                                                                                                                            "color": "black"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "name": "Sauria",
+                                                                                                                    "short_name": "Sauria",
+                                                                                                                    "taxon_id": "32561",
+                                                                                                                    "time_scale": "280",
+                                                                                                                    "color": "green",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "name": "Gallus gallus",
+                                                                                                                            "short_name": "CHICK",
+                                                                                                                            "taxon_id": "9031",
+                                                                                                                            "time_scale": "0",
+                                                                                                                            "color": "black"
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "name": "Anolis carolinensis",
+                                                                                                                            "short_name": "ANOCA",
+                                                                                                                            "taxon_id": "28377",
+                                                                                                                            "time_scale": "0",
+                                                                                                                            "color": "black"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Xenopus tropicalis",
+                                                                                                            "short_name": "XENTR",
+                                                                                                            "taxon_id": "8364",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Neopterygii",
+                                                                                                    "short_name": "Neopterygii",
+                                                                                                    "taxon_id": "41665",
+                                                                                                    "time_scale": "315",
+                                                                                                    "color": "green",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Teleostei",
+                                                                                                            "short_name": "Teleostei",
+                                                                                                            "taxon_id": "32443",
+                                                                                                            "time_scale": "274",
+                                                                                                            "color": "green",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "name": "Oryzias latipes",
+                                                                                                                    "short_name": "ORYLA",
+                                                                                                                    "taxon_id": "8090",
+                                                                                                                    "time_scale": "0",
+                                                                                                                    "color": "black"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "name": "Danio rerio",
+                                                                                                                    "short_name": "DANRE",
+                                                                                                                    "taxon_id": "7955",
+                                                                                                                    "time_scale": "0",
+                                                                                                                    "color": "black"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "lepisosteus oculatus",
+                                                                                                            "short_name": "LEPOC",
+                                                                                                            "taxon_id": "7918",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Branchiostoma floridae",
+                                                                                            "short_name": "BRAFL",
+                                                                                            "taxon_id": "7739",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "Ciona intestinalis",
+                                                                                    "short_name": "CIOIN",
+                                                                                    "taxon_id": "7719",
+                                                                                    "time_scale": "0",
+                                                                                    "color": "black"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "Strongylocentrotus purpuratus",
+                                                                            "short_name": "STRPU",
+                                                                            "taxon_id": "7668",
+                                                                            "time_scale": "0",
+                                                                            "color": "black"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Protostomia",
+                                                                    "short_name": "Protostomia",
+                                                                    "taxon_id": "33317",
+                                                                    "time_scale": "753",
+                                                                    "color": "orange",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Ecdysozoa",
+                                                                            "short_name": "Ecdysozoa",
+                                                                            "taxon_id": "1206794",
+                                                                            "time_scale": "743",
+                                                                            "color": "orange",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Rhabditida-Chromadorea",
+                                                                                    "short_name": "Rhabditida-Chromadorea",
+                                                                                    "taxon_id": "60-241",
+                                                                                    "time_scale": "181",
+                                                                                    "color": "cyan",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Caenorhabditis",
+                                                                                            "short_name": "Caenorhabditis",
+                                                                                            "taxon_id": "6237",
+                                                                                            "time_scale": "60",
+                                                                                            "color": "cyan",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Caenorhabditis elegans",
+                                                                                                    "short_name": "CAEEL",
+                                                                                                    "taxon_id": "6239",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Caenorhabditis briggsae",
+                                                                                                    "short_name": "CAEBR",
+                                                                                                    "taxon_id": "6238",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Pristionchus pacificus",
+                                                                                            "short_name": "PRIPA",
+                                                                                            "taxon_id": "54126",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "Arthropoda",
+                                                                                    "short_name": "Arthropoda",
+                                                                                    "taxon_id": "6656",
+                                                                                    "time_scale": "601",
+                                                                                    "color": "orange",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Hexapoda-Crustacea",
+                                                                                            "short_name": "Hexapoda-Crustacea",
+                                                                                            "taxon_id": "",
+                                                                                            "time_scale": "480",
+                                                                                            "color": "green",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Endopterygota",
+                                                                                                    "short_name": "Endopterygota",
+                                                                                                    "taxon_id": "33392",
+                                                                                                    "time_scale": "325",
+                                                                                                    "color": "green",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Diptera",
+                                                                                                            "short_name": "Diptera",
+                                                                                                            "taxon_id": "7147",
+                                                                                                            "time_scale": "272",
+                                                                                                            "color": "green",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "name": "Drosophila melanogaster",
+                                                                                                                    "short_name": "DROME",
+                                                                                                                    "taxon_id": "7227",
+                                                                                                                    "time_scale": "0",
+                                                                                                                    "color": "black"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "name": "Anopheles gambiae",
+                                                                                                                    "short_name": "ANOGA",
+                                                                                                                    "taxon_id": "7165",
+                                                                                                                    "time_scale": "0",
+                                                                                                                    "color": "black"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Tribolium castaneum",
+                                                                                                            "short_name": "TRICA",
+                                                                                                            "taxon_id": "7070",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Daphnia pulex",
+                                                                                                    "short_name": "DAPPU",
+                                                                                                    "taxon_id": "6669",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Ixodes scapularis",
+                                                                                            "short_name": "IXOSC",
+                                                                                            "taxon_id": "6945",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "helobdella robusta",
+                                                                            "short_name": "HELRO",
+                                                                            "taxon_id": "6412",
+                                                                            "time_scale": "0",
+                                                                            "color": "black"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Nematostella vectensis",
+                                                            "short_name": "NEMVE",
+                                                            "taxon_id": "45351",
+                                                            "time_scale": "0",
+                                                            "color": "black"
+                                                        },
+                                                        {
+                                                            "name": "Trichoplax adhaerens",
+                                                            "short_name": "TRIAD",
+                                                            "taxon_id": "10228",
+                                                            "time_scale": "0",
+                                                            "color": "black"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Monosiga brevicollis",
+                                                    "short_name": "MONBE",
+                                                    "taxon_id": "81824",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Fungi",
+                                            "short_name": "Fungi",
+                                            "taxon_id": "4751",
+                                            "time_scale": "1055",
+                                            "color": "purple",
+                                            "children": [
+                                                {
+                                                    "name": "Dikarya",
+                                                    "short_name": "Dikarya",
+                                                    "taxon_id": "451864",
+                                                    "time_scale": "723",
+                                                    "color": "orange",
+                                                    "children": [
+                                                        {
+                                                            "name": "Ascomycota",
+                                                            "short_name": "Ascomycota",
+                                                            "taxon_id": "4890",
+                                                            "time_scale": "590",
+                                                            "color": "orange",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Pezizomycotina-Saccharomycotina",
+                                                                    "short_name": "Pezizomycotina-Saccharomycotina",
+                                                                    "taxon_id": "",
+                                                                    "time_scale": "590",
+                                                                    "color": "orange",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Saccharomycetales",
+                                                                            "short_name": "Saccharomycetales",
+                                                                            "taxon_id": "4892",
+                                                                            "time_scale": "590",
+                                                                            "color": "orange",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Saccharomycetaceae-Candida",
+                                                                                    "short_name": "Saccharomycetaceae-Candida",
+                                                                                    "taxon_id": "",
+                                                                                    "time_scale": "304",
+                                                                                    "color": "green",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Saccharomycetaceae",
+                                                                                            "short_name": "Saccharomycetaceae",
+                                                                                            "taxon_id": "4893",
+                                                                                            "time_scale": "114",
+                                                                                            "color": "cyan",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Saccharomyces cerevisiae",
+                                                                                                    "short_name": "YEAST",
+                                                                                                    "taxon_id": "559292",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Ashbya gossypii",
+                                                                                                    "short_name": "ASHGO",
+                                                                                                    "taxon_id": "284811",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Candida albicans",
+                                                                                            "short_name": "CANAL",
+                                                                                            "taxon_id": "237561",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "Yarrowia lipolytica",
+                                                                                    "short_name": "YARLI",
+                                                                                    "taxon_id": "284591",
+                                                                                    "time_scale": "0",
+                                                                                    "color": "black"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "Pezizomycotina",
+                                                                            "short_name": "Pezizomycotina",
+                                                                            "taxon_id": "147538",
+                                                                            "time_scale": "442",
+                                                                            "color": "green",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Aspergillus",
+                                                                                    "short_name": "Aspergillus",
+                                                                                    "taxon_id": "5052",
+                                                                                    "time_scale": "64",
+                                                                                    "color": "cyan",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Emericella nidulans",
+                                                                                            "short_name": "EMENI",
+                                                                                            "taxon_id": "227321",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Neosartorya fumigata",
+                                                                                            "short_name": "ASPFU",
+                                                                                            "taxon_id": "330879",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "Sordariomycetes-Leotiomycetes",
+                                                                                    "short_name": "Sordariomycetes-Leotiomycetes",
+                                                                                    "taxon_id": "",
+                                                                                    "time_scale": "437",
+                                                                                    "color": "green",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Sordariomyceta",
+                                                                                            "short_name": "Sordariomyceta",
+                                                                                            "taxon_id": "715989",
+                                                                                            "time_scale": "394",
+                                                                                            "color": "green",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Neurospora crassa",
+                                                                                                    "short_name": "NEUCR",
+                                                                                                    "taxon_id": "367110",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Sclerotinia sclerotiorum",
+                                                                                                    "short_name": "SCLS1",
+                                                                                                    "taxon_id": "665079",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Phaeosphaeria nodorum",
+                                                                                            "short_name": "PHANO",
+                                                                                            "taxon_id": "321614",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Schizosaccharomyces pombe",
+                                                                    "short_name": "SCHPO",
+                                                                    "taxon_id": "284812",
+                                                                    "time_scale": "0",
+                                                                    "color": "black"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Basidiomycota",
+                                                            "short_name": "Basidiomycota",
+                                                            "taxon_id": "5204",
+                                                            "time_scale": "519",
+                                                            "color": "orange",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Cryptococcus neoformans",
+                                                                    "short_name": "CRYNJ",
+                                                                    "taxon_id": "214684",
+                                                                    "time_scale": "0",
+                                                                    "color": "black"
+                                                                },
+                                                                {
+                                                                    "name": "Ustilago maydis",
+                                                                    "short_name": "USTMA",
+                                                                    "taxon_id": "237631",
+                                                                    "time_scale": "0",
+                                                                    "color": "black"
+                                                                },
+                                                                {
+                                                                    "name": "Puccinia graminis",
+                                                                    "short_name": "PUCGT",
+                                                                    "taxon_id": "418459",
+                                                                    "time_scale": "0",
+                                                                    "color": "black"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Batrachochytrium dendrobatidis",
+                                                    "short_name": "BATDJ",
+                                                    "taxon_id": "684364",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Amoebozoa",
+                                    "short_name": "Amoebozoa",
+                                    "taxon_id": "554915",
+                                    "time_scale": "1480",
+                                    "color": "purple",
+                                    "children": [
+                                        {
+                                            "name": "Entamoeba histolytica",
+                                            "short_name": "ENTHI",
+                                            "taxon_id": "5759",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Dictyostelium",
+                                            "short_name": "Dictyostelium",
+                                            "taxon_id": "5782",
+                                            "time_scale": "2101",
+                                            "color": "red",
+                                            "children": [
+                                                {
+                                                    "name": "Dictyostelium discoideum",
+                                                    "short_name": "DICDI",
+                                                    "taxon_id": "44689",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                },
+                                                {
+                                                    "name": "Dictyostelium purpureum",
+                                                    "short_name": "DICPU",
+                                                    "taxon_id": "5786",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Alveolata-Stramenopiles",
+                            "short_name": "Alveolata-Stramenopiles",
+                            "taxon_id": "",
+                            "time_scale": "1290",
+                            "color": "purple",
+                            "children": [
+                                {
+                                    "name": "Alveolata",
+                                    "short_name": "Alveolata",
+                                    "taxon_id": "33630",
+                                    "time_scale": "1290",
+                                    "color": "purple",
+                                    "children": [
+                                        {
+                                            "name": "Plasmodium falciparum",
+                                            "short_name": "PLAF7",
+                                            "taxon_id": "36329",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Paramecium tetraurelia",
+                                            "short_name": "PARTE",
+                                            "taxon_id": "5888",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Stramenopiles",
+                                    "short_name": "Stramenopiles",
+                                    "taxon_id": "33634",
+                                    "time_scale": "658",
+                                    "color": "orange",
+                                    "children": [
+                                        {
+                                            "name": "Thalassiosira pseudonana",
+                                            "short_name": "THAPS",
+                                            "taxon_id": "35128",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Phytophthora ramorum",
+                                            "short_name": "PHYRM",
+                                            "taxon_id": "164328",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Excavates",
+                            "short_name": "Excavates",
+                            "taxon_id": "",
+                            "time_scale": "2101",
+                            "color": "red",
+                            "children": [
+                                {
+                                    "name": "Trypanosomatidae",
+                                    "short_name": "Trypanosomatidae",
+                                    "taxon_id": "5654",
+                                    "time_scale": "327",
+                                    "color": "green",
+                                    "children": [
+                                        {
+                                            "name": "Leishmania major",
+                                            "short_name": "LEIMA",
+                                            "taxon_id": "5664",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Trypanosoma brucei",
+                                            "short_name": "TRYB2",
+                                            "taxon_id": "185431",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Fornicata-Parabasalids",
+                                    "short_name": "Fornicata-Parabasalids",
+                                    "taxon_id": "",
+                                    "time_scale": "985",
+                                    "color": "orange",
+                                    "children": [
+                                        {
+                                            "name": "Giardia intestinalis",
+                                            "short_name": "GIAIC",
+                                            "taxon_id": "184922",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Trichomonas vaginalis",
+                                            "short_name": "TRIVA",
+                                            "taxon_id": "5722",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Viridiplantae",
+                            "short_name": "Viridiplantae",
+                            "taxon_id": "33090",
+                            "time_scale": "1160",
+                            "color": "purple",
+                            "children": [
+                                {
+                                    "name": "Chlorophyta",
+                                    "short_name": "Chlorophyta",
+                                    "taxon_id": "3041",
+                                    "time_scale": "1160",
+                                    "color": "purple",
+                                    "children": [
+                                        {
+                                            "name": "Chlamydomonas reinhardtii",
+                                            "short_name": "CHLRE",
+                                            "taxon_id": "3055",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Ostreococcus tauri",
+                                            "short_name": "OSTTA",
+                                            "taxon_id": "70448",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Embryophyta",
+                                    "short_name": "Embryophyta",
+                                    "taxon_id": "3193",
+                                    "time_scale": "532",
+                                    "color": "orange",
+                                    "children": [
+                                        {
+                                            "name": "Magnoliophyta",
+                                            "short_name": "Magnoliophyta",
+                                            "taxon_id": "3398",
+                                            "time_scale": "181",
+                                            "color": "cyan",
+                                            "children": [
+                                                {
+                                                    "name": "Amborella trichopoda",
+                                                    "short_name": "AMBTC",
+                                                    "taxon_id": "13333",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                },
+                                                {
+                                                    "name": "Mesangiosperma",
+                                                    "short_name": "Mesangiosperma",
+                                                    "taxon_id": "",
+                                                    "time_scale": "181",
+                                                    "color": "cyan",
+                                                    "children": [
+                                                        {
+                                                            "name": "Liliopsida",
+                                                            "short_name": "Liliopsida",
+                                                            "taxon_id": "4447",
+                                                            "time_scale": "128",
+                                                            "color": "cyan",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Zostera marina",
+                                                                    "short_name": "ZOSMR",
+                                                                    "taxon_id": "29655",
+                                                                    "time_scale": "0",
+                                                                    "color": "black"
+                                                                },
+                                                                {
+                                                                    "name": "commelinids",
+                                                                    "short_name": "commelinids",
+                                                                    "taxon_id": "4734",
+                                                                    "time_scale": "114",
+                                                                    "color": "cyan",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Zingiberales-Arecales",
+                                                                            "short_name": "Zingiberales-Arecales",
+                                                                            "taxon_id": "",
+                                                                            "time_scale": "114",
+                                                                            "color": "cyan",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Musa acuminata subsp. malaccensis",
+                                                                                    "short_name": "MUSAM",
+                                                                                    "taxon_id": "214687",
+                                                                                    "time_scale": "0",
+                                                                                    "color": "black"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Phoenix dactylifera",
+                                                                                    "short_name": "PHODC",
+                                                                                    "taxon_id": "42345",
+                                                                                    "time_scale": "0",
+                                                                                    "color": "black"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "Poaceae",
+                                                                            "short_name": "Poaceae",
+                                                                            "taxon_id": "4479",
+                                                                            "time_scale": "76",
+                                                                            "color": "cyan",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Panicoideae",
+                                                                                    "short_name": "Panicoideae",
+                                                                                    "taxon_id": "147369",
+                                                                                    "time_scale": "23.4",
+                                                                                    "color": "blue",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Setaria italica",
+                                                                                            "short_name": "SETIT",
+                                                                                            "taxon_id": "4555",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Andropogoneae",
+                                                                                            "short_name": "Andropogoneae",
+                                                                                            "taxon_id": "147429",
+                                                                                            "time_scale": "12.19",
+                                                                                            "color": "blue",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Sorghum bicolor",
+                                                                                                    "short_name": "SORBI",
+                                                                                                    "taxon_id": "4558",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Zea mays",
+                                                                                                    "short_name": "MAIZE",
+                                                                                                    "taxon_id": "4577",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "BEP_clade",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Oryza sativa",
+                                                                                            "short_name": "ORYSJ",
+                                                                                            "taxon_id": "39947",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Pooideae",
+                                                                                            "short_name": "Pooideae",
+                                                                                            "taxon_id": "147368",
+                                                                                            "time_scale": "32.6",
+                                                                                            "color": "blue",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Brachypodium distachyon",
+                                                                                                    "short_name": "BRADI",
+                                                                                                    "taxon_id": "15368",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Triticeae",
+                                                                                                    "short_name": "Triticeae",
+                                                                                                    "taxon_id": "147389",
+                                                                                                    "time_scale": "10.9",
+                                                                                                    "color": "blue",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Hordeum vulgare subsp. vulgare",
+                                                                                                            "short_name": "HORVV",
+                                                                                                            "taxon_id": "112509",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Triticum aestivum",
+                                                                                                            "short_name": "WHEAT",
+                                                                                                            "taxon_id": "4565",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Pentapetalae",
+                                                            "short_name": "Pentapetalae",
+                                                            "taxon_id": "1437201",
+                                                            "time_scale": "117",
+                                                            "color": "cyan",
+                                                            "children": [
+                                                                {
+                                                                    "name": "asterids",
+                                                                    "short_name": "asterids",
+                                                                    "taxon_id": "71274",
+                                                                    "time_scale": "104",
+                                                                    "color": "cyan",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Helianthus annuus",
+                                                                            "short_name": "HELAN",
+                                                                            "taxon_id": "4232",
+                                                                            "time_scale": "0",
+                                                                            "color": "black"
+                                                                        },
+                                                                        {
+                                                                            "name": "lamiids",
+                                                                            "short_name": "lamiids",
+                                                                            "taxon_id": "91888",
+                                                                            "time_scale": "84",
+                                                                            "color": "cyan",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Erythranthe guttata",
+                                                                                    "short_name": "ERYGU",
+                                                                                    "taxon_id": "4155",
+                                                                                    "time_scale": "0",
+                                                                                    "color": "black"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Solanaceae",
+                                                                                    "short_name": "Solanaceae",
+                                                                                    "taxon_id": "4070",
+                                                                                    "time_scale": "29.8",
+                                                                                    "color": "blue",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Solanum lycopersicum",
+                                                                                            "short_name": "SOLLC",
+                                                                                            "taxon_id": "4081",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Nicotiana tabacum",
+                                                                                            "short_name": "TOBAC",
+                                                                                            "taxon_id": "4097",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "rosids",
+                                                                    "short_name": "rosids",
+                                                                    "taxon_id": "71275",
+                                                                    "time_scale": "110",
+                                                                    "color": "cyan",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Vitis vinifera",
+                                                                            "short_name": "VITVI",
+                                                                            "taxon_id": "29760",
+                                                                            "time_scale": "0",
+                                                                            "color": "black"
+                                                                        },
+                                                                        {
+                                                                            "name": "",
+                                                                            "short_name": "eurosids",
+                                                                            "taxon_id": "",
+                                                                            "time_scale": "0",
+                                                                            "color": "black",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "malvids",
+                                                                                    "short_name": "malvids",
+                                                                                    "taxon_id": "91836",
+                                                                                    "time_scale": "99",
+                                                                                    "color": "cyan",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Brassicales-Malvales",
+                                                                                            "short_name": "Brassicales-Malvales",
+                                                                                            "taxon_id": "",
+                                                                                            "time_scale": "91",
+                                                                                            "color": "cyan",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Brassicaceae",
+                                                                                                    "short_name": "Brassicaceae",
+                                                                                                    "taxon_id": "3700",
+                                                                                                    "time_scale": "25.6",
+                                                                                                    "color": "blue",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Brassica rapa subsp. pekinensis",
+                                                                                                            "short_name": "BRARP",
+                                                                                                            "taxon_id": "51351",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Arabidopsis thaliana",
+                                                                                                            "short_name": "ARATH",
+                                                                                                            "taxon_id": "3702",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Malvaceae",
+                                                                                                    "short_name": "Malvaceae",
+                                                                                                    "taxon_id": "3629",
+                                                                                                    "time_scale": "61",
+                                                                                                    "color": "cyan",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Gossypium hirsutum",
+                                                                                                            "short_name": "GOSHI",
+                                                                                                            "taxon_id": "3635",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Theobroma cacao",
+                                                                                                            "short_name": "THECC",
+                                                                                                            "taxon_id": "3641",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Citrus sinensis",
+                                                                                            "short_name": "CITSI",
+                                                                                            "taxon_id": "2711",
+                                                                                            "time_scale": "0",
+                                                                                            "color": "black"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "fabids",
+                                                                                    "short_name": "fabids",
+                                                                                    "taxon_id": "91835",
+                                                                                    "time_scale": "106",
+                                                                                    "color": "cyan",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Malpighiales",
+                                                                                            "short_name": "Malpighiales",
+                                                                                            "taxon_id": "3646",
+                                                                                            "time_scale": "80",
+                                                                                            "color": "cyan",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Populus trichocarpa",
+                                                                                                    "short_name": "POPTR",
+                                                                                                    "taxon_id": "3694",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Ricinus communis",
+                                                                                                    "short_name": "RICCO",
+                                                                                                    "taxon_id": "3988",
+                                                                                                    "time_scale": "0",
+                                                                                                    "color": "black"
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Fabales-Rosales",
+                                                                                            "short_name": "Fabales-Rosales",
+                                                                                            "taxon_id": "",
+                                                                                            "time_scale": "106",
+                                                                                            "color": "cyan",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Papilionoideae",
+                                                                                                    "short_name": "Papilionoideae",
+                                                                                                    "taxon_id": "3814",
+                                                                                                    "time_scale": "53",
+                                                                                                    "color": "cyan",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Glycine max",
+                                                                                                            "short_name": "SOYBN",
+                                                                                                            "taxon_id": "3847",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Medicago truncatula",
+                                                                                                            "short_name": "MEDTR",
+                                                                                                            "taxon_id": "3880",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "Cucurbitales-Rosales",
+                                                                                                    "short_name": "Cucurbitales-Rosales",
+                                                                                                    "taxon_id": "",
+                                                                                                    "time_scale": "106",
+                                                                                                    "color": "cyan",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "name": "Cucumis sativus",
+                                                                                                            "short_name": "CUCSA",
+                                                                                                            "taxon_id": "3659",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "name": "Prunus persica",
+                                                                                                            "short_name": "PRUPE",
+                                                                                                            "taxon_id": "3760",
+                                                                                                            "time_scale": "0",
+                                                                                                            "color": "black"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Physcomitrella patens",
+                                            "short_name": "PHYPA",
+                                            "taxon_id": "3218",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Archaea",
+                    "short_name": "Archaea",
+                    "taxon_id": "2157",
+                    "time_scale": "4147",
+                    "color": "red",
+                    "children": [
+                        {
+                            "name": "Nitrosopumilus maritimus",
+                            "short_name": "NITMS",
+                            "taxon_id": "436308",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Korarchaeum cryptofilum",
+                            "short_name": "KORCO",
+                            "taxon_id": "374847",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Thermoprotei",
+                            "short_name": "Thermoprotei",
+                            "taxon_id": "183924",
+                            "time_scale": "2873",
+                            "color": "red",
+                            "children": [
+                                {
+                                    "name": "Sulfolobus solfataricus",
+                                    "short_name": "SULSO",
+                                    "taxon_id": "273057",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Pyrobaculum aerophilum",
+                                    "short_name": "PYRAE",
+                                    "taxon_id": "178306",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Euryarchaeota",
+                            "short_name": "Euryarchaeota",
+                            "taxon_id": "28890",
+                            "time_scale": "3637",
+                            "color": "red",
+                            "children": [
+                                {
+                                    "name": "Methanosarcina acetivorans",
+                                    "short_name": "METAC",
+                                    "taxon_id": "188937",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Methanocaldococcus jannaschii",
+                                    "short_name": "METJA",
+                                    "taxon_id": "243232",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Halobacterium salinarum",
+                                    "short_name": "HALSA",
+                                    "taxon_id": "64091",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Thermococcus kodakaraensis",
+                                    "short_name": "THEKO",
+                                    "taxon_id": "69014",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Eubacteria",
+            "short_name": "Eubacteria",
+            "taxon_id": "2",
+            "time_scale": "3936",
+            "color": "red",
+            "children": [
+                {
+                    "name": "Firmicutes",
+                    "short_name": "Firmicutes",
+                    "taxon_id": "1239",
+                    "time_scale": "2620",
+                    "color": "red",
+                    "children": [
+                        {
+                            "name": "Clostridium botulinum",
+                            "short_name": "CLOBH",
+                            "taxon_id": "441771",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Bacilli",
+                            "short_name": "Bacilli",
+                            "taxon_id": "91061",
+                            "time_scale": "2030",
+                            "color": "red",
+                            "children": [
+                                {
+                                    "name": "Streptococcus pneumoniae",
+                                    "short_name": "STRR6",
+                                    "taxon_id": "171101",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Bacillales",
+                                    "short_name": "Bacillales",
+                                    "taxon_id": "1385",
+                                    "time_scale": "2030",
+                                    "color": "red",
+                                    "children": [
+                                        {
+                                            "name": "Staphylococcus aureus",
+                                            "short_name": "STAA8",
+                                            "taxon_id": "93061",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Listeria monocytogenes",
+                                            "short_name": "LISMO",
+                                            "taxon_id": "169963",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Bacillus",
+                                            "short_name": "Bacillus",
+                                            "taxon_id": "1386",
+                                            "time_scale": "1022",
+                                            "color": "purple",
+                                            "children": [
+                                                {
+                                                    "name": "Bacillus subtilis",
+                                                    "short_name": "BACSU",
+                                                    "taxon_id": "224308",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                },
+                                                {
+                                                    "name": "Bacillus cereus",
+                                                    "short_name": "BACCR",
+                                                    "taxon_id": "226900",
+                                                    "time_scale": "0",
+                                                    "color": "black"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Actinomycetales",
+                    "short_name": "Actinomycetales",
+                    "taxon_id": "2037",
+                    "time_scale": "1530",
+                    "color": "purple",
+                    "children": [
+                        {
+                            "name": "Streptomyces coelicolor",
+                            "short_name": "STRCO",
+                            "taxon_id": "100226",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Mycobacterium tuberculosis",
+                            "short_name": "MYCTU",
+                            "taxon_id": "83332",
+                            "time_scale": "0",
+                            "color": "black"
+                        }
+                    ]
+                },
+                {
+                    "name": "mycoplasma genitalium",
+                    "short_name": "MYCGE",
+                    "taxon_id": "243273",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Thermotoga maritima",
+                    "short_name": "THEMA",
+                    "taxon_id": "243274",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Deinococcus radiodurans",
+                    "short_name": "DEIRA",
+                    "taxon_id": "243230",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Chloroflexus aurantiacus",
+                    "short_name": "CHLAA",
+                    "taxon_id": "324602",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Cyanobacteria",
+                    "short_name": "Cyanobacteria",
+                    "taxon_id": "1117",
+                    "time_scale": "2245",
+                    "color": "red",
+                    "children": [
+                        {
+                            "name": "Gloeobacter violaceus",
+                            "short_name": "GLOVI",
+                            "taxon_id": "251221",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Synechocystis",
+                            "short_name": "SYNY3",
+                            "taxon_id": "1111708",
+                            "time_scale": "0",
+                            "color": "black"
+                        }
+                    ]
+                },
+                {
+                    "name": "Leptospira interrogans",
+                    "short_name": "LEPIN",
+                    "taxon_id": "189518",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Bacteroides thetaiotaomicron",
+                    "short_name": "BACTN",
+                    "taxon_id": "226186",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Chlamydia trachomatis",
+                    "short_name": "CHLTR",
+                    "taxon_id": "272561",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Aquifex aeolicus",
+                    "short_name": "AQUAE",
+                    "taxon_id": "224324",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Rhodopirellula baltica",
+                    "short_name": "RHOBA",
+                    "taxon_id": "243090",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Thermodesulfovibrio yellowstonii",
+                    "short_name": "THEYD",
+                    "taxon_id": "289376",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Dictyoglomus turgidum",
+                    "short_name": "DICTD",
+                    "taxon_id": "515635",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Fusobacterium nucleatum",
+                    "short_name": "FUSNN",
+                    "taxon_id": "190304",
+                    "time_scale": "0",
+                    "color": "black"
+                },
+                {
+                    "name": "Proteobacteria",
+                    "short_name": "Proteobacteria",
+                    "taxon_id": "1224",
+                    "time_scale": "2480",
+                    "color": "red",
+                    "children": [
+                        {
+                            "name": "Helicobacter pylori",
+                            "short_name": "HELPY",
+                            "taxon_id": "85962",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Neisseria meningitidis serogroup b",
+                            "short_name": "NEIMB",
+                            "taxon_id": "122586",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Geobacter sulfurreducens",
+                            "short_name": "GEOSL",
+                            "taxon_id": "243231",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Bradyrhizobium diazoefficiens",
+                            "short_name": "BRADU",
+                            "taxon_id": "224911",
+                            "time_scale": "0",
+                            "color": "black"
+                        },
+                        {
+                            "name": "Gammaproteobacteria",
+                            "short_name": "Gammaproteobacteria",
+                            "taxon_id": "1236",
+                            "time_scale": "1677",
+                            "color": "purple",
+                            "children": [
+                                {
+                                    "name": "Coxiella burnetii",
+                                    "short_name": "COXBU",
+                                    "taxon_id": "227377",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Haemophilus influenzae",
+                                    "short_name": "HAEIN",
+                                    "taxon_id": "71421",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Shewanella oneidensis",
+                                    "short_name": "SHEON",
+                                    "taxon_id": "211586",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Vibrio cholerae",
+                                    "short_name": "VIBCH",
+                                    "taxon_id": "243277",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Xanthomonas campestris",
+                                    "short_name": "XANCP",
+                                    "taxon_id": "190485",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Pseudomonas aeruginosa",
+                                    "short_name": "PSEAE",
+                                    "taxon_id": "208964",
+                                    "time_scale": "0",
+                                    "color": "black"
+                                },
+                                {
+                                    "name": "Enterobacteriaceae",
+                                    "short_name": "Enterobacteriaceae",
+                                    "taxon_id": "543",
+                                    "time_scale": "228",
+                                    "color": "green",
+                                    "children": [
+                                        {
+                                            "name": "Salmonella typhimurium",
+                                            "short_name": "SALTY",
+                                            "taxon_id": "99287",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Yersinia pestis",
+                                            "short_name": "YERPE",
+                                            "taxon_id": "632",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        },
+                                        {
+                                            "name": "Escherichia coli",
+                                            "short_name": "ECOLI",
+                                            "taxon_id": "83333",
+                                            "time_scale": "0",
+                                            "color": "black"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "name": "LUCA",
+    "short_name": "LUCA",
+    "taxon_id": "131567",
+    "time_scale": "4290",
+    "color": "red"
+}
