@@ -1,0 +1,36 @@
+# compiled output
+/dist
+/coverage
+*.tsbuildinfo
+
+# dependencies
+/node_modules
+
+# logs
+/logs
+*.log
+npm-debug.log*
+
+# environment
+.env
+.env.*
+!.env.example
+
+# data dumps are large and not source
+/dump
+*.archive.gz
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
