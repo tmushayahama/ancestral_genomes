@@ -1,0 +1,40 @@
+# Local stack: MongoDB 7 + the API.
+#
+#   docker compose up -d mongo
+#   docker compose exec mongo mongorestore --gzip --archive=/dump/agb15.archive.gz
+#   docker compose up -d --build api
+#   docker compose exec api node dist/cli db:indexes
+#
+# Put the dump in ./dump (git-ignored). Mongo is published on 27018 so it does
+# not clash with a MongoDB already running on 27017.
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:27018:27017'
+    volumes:
+      - mongo_data:/data/db
+      - ./dump:/dump:ro
+    healthcheck:
+      test: ['CMD', 'mongosh', '--quiet', '--eval', "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      DB_URL: mongodb://mongo:27017/ancGenomesDB15
+      APP_ENV: prod
+      SERVER_PORT: 3004
+      PAINT_ANNOTATIONS_SOURCE: none
+    ports:
+      - '3004:3004'
+
+volumes:
+  mongo_data:
