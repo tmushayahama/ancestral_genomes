@@ -142,6 +142,12 @@ queries the gene collections by the canonical **short name only** (one indexed f
   rejects otherwise — the symptom is "Missing required sub-document 'driver' in the client metadata
   document".
 - The throttler counts per route, so REST and GraphQL buckets are separate.
+- `package.json` `overrides` pins `multer@2.4.0`: `@nestjs/platform-express` 11.2.5 (latest 11.x)
+  pins multer 2.2.0, which has four high-severity DoS advisories. Drop the override once a Nest
+  release ships a fixed multer, and keep `npm audit` at zero.
+- helmet's CSP (non-dev) is the default minus `upgrade-insecure-requests`, so Swagger UI still
+  loads when the API is served over plain HTTP. In dev CSP is off, because GraphiQL loads from a
+  CDN.
 - Port 3004 by default; legacy is 3003, the site's dev server 4210, and an unrelated NestJS app on
   this machine uses 3002.
 

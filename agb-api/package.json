@@ -80,6 +80,9 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
   },
+  "overrides": {
+    "multer": "2.4.0"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",

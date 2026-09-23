@@ -27,8 +27,12 @@ export function configureApp(
   }
   app.use(
     helmet({
-      // GraphiQL (dev only) loads its assets from a CDN.
-      contentSecurityPolicy: config.isEnv('dev') ? false : undefined,
+      // GraphiQL (dev only) loads its assets from a CDN. Elsewhere keep
+      // helmet's policy, minus upgrade-insecure-requests: it would send the
+      // Swagger UI's own assets to https:// on a plain-HTTP deployment.
+      contentSecurityPolicy: config.isEnv('dev')
+        ? false
+        : { directives: { upgradeInsecureRequests: null } },
       // The data is public and meant to be fetched cross-origin.
       crossOriginResourcePolicy: { policy: 'cross-origin' },
     }),
