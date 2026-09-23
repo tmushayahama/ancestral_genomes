@@ -1,0 +1,181 @@
+# Generated from the code-first resolvers by `npm run schema:generate`.
+# Do not edit; a unit test fails when this file is out of date.
+
+"""An ancestor of a species, nearest first by age."""
+type Ancestor {
+  shortName: String!
+
+  """null when the ancestor has no row in the data (e.g. eurosids)."""
+  species: Species
+  timescale: Float
+}
+
+"""Whether PAINT annotated this node directly or it inherits the term."""
+enum AnnotationInheritance {
+  DIRECT
+  INHERITED
+}
+
+type ComparisonCounts {
+  descendants: Int!
+  gained: Int!
+  inherited: Int!
+  lost: Int!
+  unmodelled: Int!
+}
+
+"""An extant gene descended from an ancestral one."""
+type DescendantGene {
+  name: String
+  pantherId: String
+  ptn: ID!
+}
+
+type Gene {
+  alignedSequence: String
+  event: String
+  familyId: String
+  familyName: String
+  isAncestral: Boolean!
+  name: String
+
+  """GO (PAINT) annotations; errors when no source is configured."""
+  paintAnnotations: [PaintAnnotation!]
+  pantherId: String
+  proxyGenes: [ProxyGene!]!
+  ptn: ID!
+  sequence: String
+  species: Species
+  speciesLongName: String
+  speciesShortName: String!
+}
+
+type GeneCounts {
+  ancestral: Int!
+  extant: Int!
+  total: Int!
+}
+
+"""A gene in a list."""
+type GeneSummary {
+  familyId: String
+  name: String
+  pantherId: String
+  proxyGene: String
+  ptn: ID!
+}
+
+type GeneSummaryPage {
+  items: [GeneSummary!]!
+  limit: Int
+  offset: Int!
+  total: Int!
+}
+
+"""An ancestral genome compared with one of its extant descendants."""
+type GenomeComparison {
+  ancestral: Species!
+  counts: ComparisonCounts!
+  extant: Species!
+  gained(limit: Int! = 100, offset: Int! = 0): GeneSummaryPage!
+  inherited(limit: Int! = 100, offset: Int! = 0): InheritedGenePage!
+  lost(limit: Int! = 100, offset: Int! = 0): GeneSummaryPage!
+
+  """Genes of the extant species that no PANTHER family models."""
+  unmodelled(limit: Int! = 100, offset: Int! = 0): GeneSummaryPage!
+}
+
+"""An ancestral gene that survives in the extant genome."""
+type InheritedGene {
+  descendants: [DescendantGene!]!
+  familyId: String
+  name: String
+  ptn: ID!
+}
+
+type InheritedGenePage {
+  items: [InheritedGene!]!
+  limit: Int
+  offset: Int!
+  total: Int!
+}
+
+"""A GO term painted onto a gene (PAINT)."""
+type PaintAnnotation {
+  goId: String!
+  goName: String!
+  inheritance: AnnotationInheritance
+}
+
+"""An extant gene that stands in for an ancestral one."""
+type ProxyGene {
+  gene: String!
+  species: Species
+  speciesLongName: String
+  speciesShortName: String!
+}
+
+type Query {
+  """
+  null when either species is unknown; an error when extant is not extant or ancestral is not one of its ancestors.
+  """
+  comparison(ancestral: String!, extant: String!): GenomeComparison
+  gene(ptn: ID!): Gene
+
+  """By short or long name; null when there is no such species."""
+  species(name: String!): Species
+
+  """Every species, flat. Nest client-side by treeParentId."""
+  speciesList: [Species!]!
+  stats: Stats!
+}
+
+"""
+A node of the species tree: an extant species (a leaf) or a reconstructed ancestral genome.
+"""
+type Species {
+  ancestors: [Ancestor!]!
+  children: [Species!]!
+  geneCount: Int!
+  genes(
+    limit: Int! = 100
+    offset: Int! = 0
+
+    """
+    An extant descendant to show each gene’s descendant in; omit for default proxies.
+    """
+    proxy: String
+  ): GeneSummaryPage!
+  id: ID!
+  isExtant: Boolean!
+  longName: String!
+
+  """Parent in the repaired tree (see treeParentId); null for the root."""
+  parent: Species
+  parentId: ID
+  parentShortName: String
+  placementInferred: Boolean!
+
+  """Extant species that can stand in for this ancestral genome."""
+  proxySpecies: [Species!]!
+  shortName: String!
+  taxonId: Int
+  timescale: Float
+  treeParentId: ID
+
+  """Genes no PANTHER family models; null for ancestral genomes."""
+  unmodelledGenes(limit: Int! = 100, offset: Int! = 0): GeneSummaryPage
+}
+
+type SpeciesCounts {
+  ancestral: Int!
+  extant: Int!
+  total: Int!
+}
+
+"""Release figures, derived from the species tree."""
+type Stats {
+  genes: GeneCounts!
+  pantherVersion: String
+  species: SpeciesCounts!
+}
