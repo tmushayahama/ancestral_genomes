@@ -1,9 +1,9 @@
 # Task: Port agb_api_server (Express 4 + Mongoose 4) to a NestJS 11 REST + GraphQL API in agb-api
 
-**Status:** ACTIVE — Phases 1–6 in progress, running against fixtures because no data is available
-yet. Phases 0 and 7 are waiting on a database dump.
+**Status:** ACTIVE — Phases 1–6 are complete; everything runs against fixtures. Phases 0 and 7 are
+blocked until a database dump is available; Phase 9 is waiting on decision 4.
 **Issue:** — (user request, 2026-09-22)
-**Branch:** — (`panther-agb-2` is not a git repo yet)
+**Branch:** `main` of `panther-agb-2` (agb-api committed in 12 commits from `fedf7b1`)
 
 ## Goal
 
@@ -192,94 +192,91 @@ Further legacy behaviour to keep in mind:
     cannot)
 - [ ] Record `explain('executionStats')` for every service query.
 
-### Phase 1: Scaffold agb-api from c-api
+### Phase 1: Scaffold agb-api from c-api ✅
 
-- [ ] `package.json` (name `agb-api`):
-  - **scripts:** from the template, plus `test:integration`, `cli`, and a separate Jest config per
-    suite
-  - **dependencies:** the template's list, minus auth, search, paginate and the other misc packages
-  - **kept:** the GraphQL stack (`@nestjs/graphql`, `@nestjs/apollo`, `@apollo/server`,
-    `@as-integrations/express5`, `graphql`)
-  - **added:** `joi`, `graphql-query-complexity`, `@nestjs/throttler`, `mongodb-memory-server`
-    (dev) and `cross-env` (dev)
-- [ ] Copy and trim the tooling: `tsconfig` (+ `strict`), `nest-cli.json`, `.prettierrc`,
-      `eslint.config.js` (the flat config only), `.gitignore`, `.dockerignore`,
-      `.vscode/launch.json`, `.claude/settings.local.json`.
-- [ ] `src/winston/`, verbatim from the template.
-- [ ] `src/config/`: the template's `ConfigService` shape (`get`, `isEnv`), validating `process.env`
-      with a `joi` schema. `.env` is optional: `dotenv` loads it if it is present. Add a spec.
-- [ ] `src/app/configure-app.ts`: helmet, compression, CORS, `ValidationPipe`, Swagger, shutdown
-      hooks, `trust proxy`. Both `main.ts` and the integration tests call it, so the tests exercise
-      the same middleware.
-- [ ] `AppModule`:
-  - Mongoose, Winston and GraphQL, where `graphiql` is on in dev only, `playground: false`, the
-    stack traces follow `APP_ENV`, there are no subscription handlers, and `autoSchemaFile` writes
-    to disk outside prod
-  - a throttler guard that serves both REST and GraphQL
-  - the cache-control interceptor and the access-log middleware
-- [ ] A `CliModule` for `nestjs-command`, without the HTTP or GraphQL wiring.
+- [x] `package.json` (name `agb-api`):
+  - **scripts:** the template's, plus `test:integration`, `cli`/`cli:dev` and `schema:generate`,
+    with a separate Jest config per suite
+  - **dependencies:** the template's list, minus auth, search, paginate and the misc packages;
+    the GraphQL stack kept
+  - **added:** `joi`, `graphql-query-complexity`, `@nestjs/throttler`, plus `mongodb-memory-server`
+    and `cross-env` as dev dependencies
+  - **installed:** Nest 11.2.5, `@nestjs/graphql` 13.4.5, Apollo 5.5.1, Mongoose 9.10.2
+    (driver 7.6), Jest 29.7, 864 packages
+- [x] Tooling: `tsconfig` (strict), `nest-cli.json`, `.prettierrc` (+ `endOfLine: auto`),
+      `eslint.config.js` (flat config only), `.gitignore`, `.dockerignore`.
+- [x] `src/winston/`, copied verbatim from the template.
+- [x] `src/config/`: a `joi` schema over `process.env`; `.env` is optional; tested.
+- [x] `src/app/configure-app.ts`, shared by `main.ts` and the integration tests.
+- [x] `AppModule`: Mongoose, Winston, GraphQL (`graphiql` in dev only, `playground: false`, stack
+      traces per `APP_ENV`, no subscriptions), the throttler guard for REST and GraphQL, and the
+      `Cache-Control` interceptor. Access logging is Express middleware in `configureApp`.
+- [x] **Deviation from the plan:** `autoSchemaFile: true` (in memory). `src/schema.gql` is written
+      only by `npm run schema:generate`, and `schema.spec.ts` fails when the file is stale, so
+      nothing writes to disk at runtime.
+- [x] `CliModule` + `src/cli.ts` (`db:indexes`, `data:check`), without the HTTP or GraphQL wiring.
 
-### Phase 2: Data layer
+### Phase 2: Data layer ✅
 
-- [ ] Storage schemas for `species`, `genelists`, `short_genelists` and `flat_genelists`:
-  - explicit `collection` names
-  - `versionKey: false`, `autoIndex: false`, `strictQuery: 'throw'`
-  - every field that is filtered on declared
-- [ ] Indexes are declared on the schemas and created only by the `db:indexes` command:
+- [x] Storage schemas for `species`, `genelists`, `short_genelists` and `flat_genelists`, each with
+      an explicit collection, `autoIndex: false` and `strictQuery: 'throw'`.
+- [x] Indexes declared on the schemas and created by `db:indexes` (verified against the local Mongo):
   - `genelists {ptn}`
   - `short_genelists {species_short, ptn}`
   - `flat_genelists {species_short, descent_spe_short, ptn}`
-- [ ] `SpeciesIndex`:
-  - loads all species into memory, with a TTL
-  - resolves names (exact, then case-insensitive)
-  - builds the children map and `isExtant`
-  - computes `treeParentId`, re-attaching orphans to their deepest existing ancestor
-  - also provides stats and diagnostics
-- [ ] `ResultCache`: an LRU bounded by both entry count and total row count, with TTLs and
-      **in-flight de-duplication**, so concurrent cold requests share a single query. The services
-      use it, so REST and GraphQL share it too.
-- [ ] Mappers from raw documents to API models, following the rules above. Reads use `lean()`,
-      inclusion projections, `maxTimeMS`, and a deterministic `sort({ ptn: 1 })`.
+- [x] `SpeciesSnapshot` (pure) and `SpeciesIndex` (TTL load, one shared load for concurrent
+      requests, keeps the last good tree if a reload fails). It covers name resolution, the repaired
+      tree (`treeParentId`), `isExtant` from the _repaired_ tree, stats and diagnostics.
+- [x] `ResultCache`: an LRU bounded by both entry count and row count, with a TTL and in-flight
+      de-duplication. REST and GraphQL share it.
+- [x] Mappers and services. Reads use `lean()`, inclusion projections, `maxTimeMS` and
+      `sort({ ptn: 1 })`.
 
-### Phase 3: REST API
+### Phase 3: REST API ✅
 
-- [ ] Controllers for species, stats, genes (including annotations), comparisons, and health, plus
-      `GET /`.
-- [ ] Validation:
-  - `offset` ≥ 0
-  - `limit` from 1 to 1,000,000 (omit it to get every row)
-  - species names are resolved to canonical species before any query runs
-  - comparisons check that the pair really is ancestral → extant
-- [ ] Swagger models on every route.
+- [x] Controllers for species (list, tree, one), stats, genes, annotations, species genes, proxy
+      species, unmodelled genes, comparisons (summary, inherited, lost, gained), health, and `/`.
+- [x] Validation: the paging DTO, proxy checks (extant, and a descendant), and pair checks
+      (extant, and an ancestor).
+- [x] Swagger at `/api/docs`, 14 paths.
 
-### Phase 4: GraphQL API
+### Phase 4: GraphQL API ✅
 
-- [ ] Object types (they double as the Swagger models) and a `Paginated()` factory.
-- [ ] Resolvers for species, ancestors, stats, genes, proxy genes and comparisons.
-- [ ] A depth-limit validation rule, the complexity plugin, per-field complexity for list fields, a
-      page cap, and `paintAnnotations` made nullable so its error stays on that field.
+- [x] Object types that double as the Swagger models, plus `Paginated()`.
+- [x] Resolvers: `SpeciesResolver`, `AncestorResolver`, `StatsResolver`, `SpeciesGenesResolver`,
+      `GeneResolver`, `ProxyGeneResolver`, `ComparisonResolver`.
+- [x] Limits: a depth rule (8), the complexity plugin (150,000) and a page cap (10,000).
+      `paintAnnotations` is nullable, so its error stays on that one field.
 
-### Phase 5: Tests
+### Phase 5: Tests ✅
 
-- [ ] Unit:
-  - config, mappers and text helpers
-  - the gene-gain token regex (delimiters `,` `;` `|` and space, arrays, `rosids` vs `eurosids`,
-    `Firmicutes` vs `Firmicutes-Tenericutes`, regex metacharacters)
-  - `SpeciesIndex`: resolution, `isExtant`, orphan placement, stats
-  - `ResultCache`: TTL, LRU, row budget, de-duplication, errors not cached
-  - the depth rule
-- [ ] Integration, on mongodb-memory-server with a seeded miniature dataset:
-  - every REST route and its statuses
-  - `%2F` and `%20` in names, paging, `Cache-Control`, gzip
-  - GraphQL queries, the depth and complexity rejections, and field errors on `paintAnnotations`
+- [x] Unit: **78 tests in 9 suites**. They cover config, text helpers (the exact-name regex across
+      delimiters and arrays), `ResultCache`, the depth rule, `SpeciesSnapshot`, gene mappers,
+      `toInheritedGene`, the Winston module, and the schema snapshot.
+- [x] Integration: **72 tests in 5 suites**, on mongodb-memory-server (MongoDB 8.2.6) with the seed
+      fixtures. They cover every REST route and status; names with `%2F`, `%20` and parentheses;
+      paging; `Cache-Control`; gzip; security and CORS headers; throttling on REST and GraphQL;
+      GraphQL queries and partial errors; and the depth, complexity and page-cap rejections.
 
-### Phase 6: Docs and packaging
+### Phase 6: Docs and packaging ✅
 
-- [ ] `CLAUDE.md`, `README.md`, `.env.example`.
-- [ ] `Dockerfile` (node:20-alpine, multi-stage, non-root, healthcheck) and `docker-compose.yml`
-      (mongo:7 + api).
-- [ ] Gate: `build`, `lint`, `test` and `test:integration` are all clean, the app boots against the
-      local Mongo, and a smoke run of `/api/health`, `/api/docs` and `/graphql` passes.
+- [x] `CLAUDE.md`, `README.md`, `.env.example`, `.vscode/launch.json` and
+      `.claude/settings.local.json` (an allowlist of build, lint and test commands, as in c-api).
+- [x] `Dockerfile` (node:20-alpine, multi-stage, non-root, healthcheck) and `docker-compose.yml`
+      (mongo:7 on host port 27018 + api).
+  - The image builds, and `docker run` against the local Mongo reports `healthy`.
+  - It logs JSON and serves no GraphiQL in prod.
+- [x] Security:
+  - `npm audit` found 7 high-severity advisories, all multer 2.2.0 (pinned by
+    `@nestjs/platform-express` 11.2.5, the latest 11.x). An npm override to `multer@2.4.0` brings
+    the audit to **0 vulnerabilities**, dev dependencies included, without the NestJS 12 major
+    upgrade.
+  - helmet's `upgrade-insecure-requests` is removed, because it would break Swagger UI on a
+    plain-HTTP host.
+- [x] Gate: all passed after the last change.
+  - typecheck, eslint and prettier are clean.
+  - unit 78/78; integration 72/72.
+  - build, the prod boot and the Docker build all succeed.
 
 ### Phase 7: Real-data verification (needs Phase 0)
 
@@ -375,19 +372,34 @@ From the live `species-list` (255 rows). These are for the data owner. The API d
 
 > **⚠ UPDATE THIS AFTER EVERY CHANGE**
 
-- **Last completed action:** rewrote this plan for the user's second follow-up. The API is king, so
-  the new contract is clean. There is no legacy layer and no authentication, and implementation
-  starts now. Ancestral names were confirmed to use only `[A-Za-z_/-]`, which the token regex relies
-  on.
-- **Next immediate action:** Phase 1. Check package versions and peer dependencies, write
-  `package.json` and the tooling, then run `npm install`.
+- **Last completed action:** Phase 6 done.
+  - The final gate passed: typecheck, lint and prettier clean; unit 78/78; integration 72/72;
+    build; prod boot; Docker build and run (healthy).
+  - `npm audit`: 0 vulnerabilities after the multer override.
+- **Next immediate action:** **(needs the user)** get the `ancGenomesDB15` dump and the server's
+  `mongod --version` (Phase 0). Then:
+  - restore the dump locally
+  - verify the four fixture assumptions
+  - `npm run cli -- db:indexes` and `npm run cli -- data:check`
+  - Phase 7: timings, then a parity script against legacy, **never calling `gene_go`**
 - **Recent commands run:**
-  - the `curl` sweeps of the live API (samples are in the session scratchpad, which is temporary)
-  - node analysis scripts over those samples
-  - greps of the template's `node_modules`
-- **Uncommitted changes:** `agb-api/.plans/**`. Not a git repo.
-- **Environment state:** nothing is running. The local MongoDB 7.0.1 service is up and has no AGB
-  database.
+  - `npm install` (with the multer override)
+  - `npm audit`
+  - `npm run typecheck`, `npx eslint`, `npx prettier --check`
+  - `npx jest`, `npm run test:integration`, `npm run build`
+  - `docker build -t agb-api:local .` and `docker run … agb-api:local` (stopped)
+- **Uncommitted changes:** none in `agb-api/`, which is committed on `main` in 12 chronological
+  commits (`fedf7b1` onwards). Still uncommitted: `docs/current-api-server-problems.md` at the root
+  (the user asked for the API only), and `.claude/settings.local.json`, which the user's global git
+  ignore excludes.
+- **Also done:** the legacy lockfile audit (`npm audit --package-lock-only`, read-only) found 65
+  vulnerable packages (18 critical); details are in the docs report.
+- **Environment state:**
+  - Nothing is running.
+  - The local Docker image `agb-api:local` is left in place; remove it with
+    `docker rmi agb-api:local`.
+  - The local MongoDB 7.0.1 service holds no AGB data and no leftover test databases.
+  - The mongodb-memory-server binary (MongoDB 8.2.6) is cached.
 
 ## Failed Approaches
 
@@ -398,6 +410,14 @@ From the live `species-list` (255 rows). These are for the data owner. The API d
 | Calling `/genelist/gene_go/PTN000000526` on the live API during a parallel sweep | It crashed the legacy process (F1), killing all eight in-flight requests and flushing `apicache`. **Never call `gene_go` on the legacy server.** | 2026-09-22 |
 | Reading live responses with PowerShell `Invoke-WebRequest` | The API sends no `Content-Type`, so `.Content` comes back as a byte array. Use `curl` from Bash. | 2026-09-22 |
 | Inline `node -e` with regex literals, run from Bash | The shell strips backslashes, causing a SyntaxError. Write the script to a file first. | 2026-09-22 |
+| Deriving `isExtant` from the stored `parent_id` | rosids came out "extant": its only child, malvids, points at the missing eurosids node. `isExtant`, `children` and `parent` now follow the repaired tree (`treeParentId`). A spec covers it. | 2026-09-22 |
+| Integration tests under plain `jest` | Every connection failed with "Missing required sub-document 'driver' in the client metadata document". Mongoose ships its own `mongodb@7.6.0`, which loads `os` with a dynamic `import()`; Jest's CommonJS VM rejects that without `--experimental-vm-modules`, and the driver then sends a handshake with no metadata. Fixed with `cross-env NODE_OPTIONS=--experimental-vm-modules` in `test:integration`. Production is unaffected. | 2026-09-22 |
+| GraphQL `@ArgsType` fields with only `@Field` decorators | The global `ValidationPipe` (`whitelist: true`) stripped `offset`, `limit` and `proxy`, so `genes(offset: 1, limit: 2)` returned the defaults. Every arg needs a class-validator decorator. Covered by a test. | 2026-09-22 |
+| Testing the GraphQL page cap under a low complexity budget | The complexity plugin rejects `limit: 20000` before any resolver runs, which is correct. The cap is tested in its own app at the default budget. | 2026-09-22 |
+| Counting throttled requests across REST and GraphQL together | `@nestjs/throttler` counts per handler, so `/api/stats` and the GraphQL `stats` field have separate buckets. Each is tested on its own. | 2026-09-22 |
+| First `test:integration` run | It spent about 7 minutes downloading the mongod binary and then saw ECONNREFUSED. It has not recurred since the binary was cached. | 2026-09-22 |
+| helmet's default CSP in prod | It includes `upgrade-insecure-requests`, which would send Swagger UI's same-origin assets to `https://` on a plain-HTTP host. The directive is now removed. | 2026-09-22 |
+| `npm audit fix` | Its only offer was NestJS 12, a major upgrade. An npm `overrides` pinning `multer@2.4.0` (still multer 2.x) fixed all 7 advisories instead. | 2026-09-22 |
 
 ## Files Modified
 
@@ -405,12 +425,16 @@ From the live `species-list` (255 rows). These are for the data owner. The API d
 | --- | --- | --- |
 | `.plans/template.md`, `.plans/*/.gitkeep` | copy / create | done |
 | `.plans/refactor/express-to-nestjs-port.md` | create (this plan) | done |
-| `package.json`, `tsconfig*.json`, `nest-cli.json`, `.prettierrc`, `eslint.config.js`, `.gitignore`, `.dockerignore`, `.env.example` | create | planned (Phase 1) |
-| `.claude/settings.local.json`, `.vscode/launch.json` | create | planned (Phase 1) |
-| `src/main.ts`, `src/cli.ts`, `src/app/*`, `src/config/*`, `src/winston/*`, `src/common/**`, `src/health/*` | create | planned (Phase 1) |
-| `src/species/**`, `src/genes/**`, `src/comparison/**`, `src/commands/**`, `src/schema.gql` | create | planned (Phases 2–4) |
-| `test/**` | create | planned (Phase 5) |
-| `CLAUDE.md`, `README.md`, `Dockerfile`, `docker-compose.yml` | create | planned (Phase 6) |
+| `package.json`, `tsconfig*.json`, `nest-cli.json`, `.prettierrc`, `eslint.config.js`, `.gitignore`, `.dockerignore` | create | done |
+| `src/main.ts`, `src/cli.ts`, `src/cli.module.ts`, `src/app/*`, `src/config/*`, `src/winston/*` (from c-api) | create | done |
+| `src/common/{text,cache,paging,http,logging,graphql}/**` | create | done |
+| `src/health/*`, `src/species/**`, `src/genes/**`, `src/comparison/**`, `src/commands/**` | create | done |
+| `src/graphql/{graphql-options,resolvers,generate-schema,schema.spec}.ts`, `src/schema.gql` | create | done |
+| `test/{jest-integration.json,setup/*,utils/test-app.ts,fixtures/seed.ts,*.integration-spec.ts}` | create | done |
+| `.env.example`, `.vscode/launch.json`, `.claude/settings.local.json` | create | done |
+| `CLAUDE.md`, `README.md`, `Dockerfile`, `docker-compose.yml` | create | done |
+| `package-lock.json` | generated (with the `multer` override) | done |
+| `../docs/current-api-server-problems.md` | create: a standalone report on the legacy server's problems, for the team (user request) | done |
 
 ## Blockers
 
@@ -450,6 +474,13 @@ From the live `species-list` (255 rows). These are for the data owner. The API d
   with a request that can crash it.
 - The site's slices and its `e2e/fixtures/api.ts` were the fastest route to the real wire shapes.
   The legacy Mongoose schemas are partly fiction.
+- Build the fixtures from the defects found in the live data (a missing parent, `timescale: "0"` on
+  an internal node, a `/` in a name, a blank `taxon_id`, the rosids/eurosids pair). Writing the spec
+  against those caught the `isExtant` bug before any code ran against real data.
+- `whitelist: true` on the global ValidationPipe applies to GraphQL args too. An args class without
+  class-validator decorators silently loses its values.
+- `npm ls mongodb` is worth a look whenever a connection fails only under test: two copies of the
+  driver meant two different behaviours.
 
 ## Additional Context (Claude)
 
